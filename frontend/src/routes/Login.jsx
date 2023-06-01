@@ -25,7 +25,7 @@ function Login() {
     <main className="container">
       <div className="row justify-content-center">
         <section className="col-6 mt-5">
-          <form action="/login" method="POST" onSubmit={handleSubmit}>
+          <form action="/api/login" method="POST" onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">
                 Email address
