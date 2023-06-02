@@ -13,6 +13,8 @@ const Profile = () => {
       .then((data) => setPosts(data));
   }, []);
 
+  console.log(posts);
+
   if (!user) {
     return null;
   }
