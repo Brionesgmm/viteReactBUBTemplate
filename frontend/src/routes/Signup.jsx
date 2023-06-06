@@ -4,6 +4,15 @@ function Signup() {
   const { setUser, setMessages } = useOutletContext();
   const navigate = useNavigate();
 
+  // Add your property names here
+  const properties = [
+    "Property Alpha",
+    "Property Beta",
+    "Property Gamma",
+    "Property Delta",
+    "Property Epsilon",
+  ];
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -76,6 +85,19 @@ function Signup() {
                 id="confirmPassword"
                 name="confirmPassword"
               />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="property" className="form-label">
+                Property
+              </label>
+              <select className="form-select" id="property" name="property">
+                <option value="">Select a property</option>
+                {properties.map((property, index) => (
+                  <option value={property} key={index}>
+                    {property}
+                  </option>
+                ))}
+              </select>
             </div>
             <button type="submit" className="btn btn-primary">
               Submit
