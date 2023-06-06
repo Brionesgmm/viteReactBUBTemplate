@@ -26,13 +26,13 @@ connectDB();
 
 //Static Folder
 app.use(express.static("frontend/dist"));
-app.use((req, res, next) => {
-  // If the path starts with /api, remove the /api prefix
-  if (req.path.startsWith("/api")) {
-    req.url = req.url.replace("/api", "");
-  }
-  next();
-});
+// app.use((req, res, next) => {
+//   // If the path starts with /api, remove the /api prefix
+//   if (req.path.startsWith("/api")) {
+//     req.url = req.url.replace("/api", "");
+//   }
+//   next();
+// });
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
@@ -62,8 +62,8 @@ app.use(passport.session());
 app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
-app.use("/", mainRoutes);
-app.use("/post", postRoutes);
+app.use("/api", mainRoutes);
+app.use("/api/post", postRoutes);
 app.use("*", (_, res) => {
   res.sendFile(path.join(__dirname, "frontend/dist/index.html"));
 });
