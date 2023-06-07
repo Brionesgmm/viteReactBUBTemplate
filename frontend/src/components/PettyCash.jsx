@@ -44,8 +44,8 @@ const PettyCash = ({
     setCurrentTotal(newCurrentTotal);
 
     // Compute total petty cash
-    const newTotalPettyCash = newCurrentTotal + receipts;
-    setTotalPettyCash(newTotalPettyCash);
+    const newTotalPettyCash = newCurrentTotal + Number(receipts);
+    setCurrentTotal(newTotalPettyCash.toFixed(2));
   }, [
     pennies,
     nickels,
@@ -62,96 +62,154 @@ const PettyCash = ({
 
   return (
     <div>
-      {/* Denominations */}
-      <label>Pennies:</label>
-      <input
-        type="number"
-        value={pennies}
-        onChange={(e) => setPennies(e.target.value)}
-      />
+      <h2 className="pettyCashTitle">Petty Cash</h2>
+      <div className="pettyCash">
+        {/* Denominations */}
+        <div className="cashInputs">
+          <label htmlFor="pennies">Pennies: </label>
+          <input
+            type="number"
+            name="pennies"
+            id="pennies"
+            value={pennies}
+            onChange={(e) => setPennies(e.target.value)}
+          />
+        </div>
 
-      <label>Nickels:</label>
-      <input
-        type="number"
-        value={nickels}
-        onChange={(e) => setNickels(e.target.value)}
-      />
+        <div className="cashInputs">
+          <label htmlFor="nickels">Nickels: </label>
+          <input
+            type="number"
+            name="nickels"
+            id="nickels"
+            value={nickels}
+            onChange={(e) => setNickels(e.target.value)}
+          />
+        </div>
 
-      <label>Dimes:</label>
-      <input
-        type="number"
-        value={dimes}
-        onChange={(e) => setDimes(e.target.value)}
-      />
+        <div className="cashInputs">
+          <label htmlFor="dimes">Dimes: </label>
+          <input
+            type="number"
+            name="dimes"
+            id="dimes"
+            value={dimes}
+            onChange={(e) => setDimes(e.target.value)}
+          />
+        </div>
 
-      <label>Quarters:</label>
-      <input
-        type="number"
-        value={quarters}
-        onChange={(e) => setQuarters(e.target.value)}
-      />
+        <div className="cashInputs">
+          <label htmlFor="quarters">Quarters:</label>
+          <input
+            type="number"
+            name="quarters"
+            id="quarters"
+            value={quarters}
+            onChange={(e) => setQuarters(e.target.value)}
+          />
+        </div>
 
-      <label>Ones:</label>
-      <input
-        type="number"
-        value={ones}
-        onChange={(e) => setOnes(e.target.value)}
-      />
+        <div className="cashInputs">
+          <label htmlFor="ones">Ones:</label>
+          <input
+            type="number"
+            name="ones"
+            id="ones"
+            value={ones}
+            onChange={(e) => setOnes(e.target.value)}
+          />
+        </div>
 
-      <label>Fives:</label>
-      <input
-        type="number"
-        value={fives}
-        onChange={(e) => setFives(e.target.value)}
-      />
+        <div className="cashInputs">
+          <label htmlFor="fives">Fives:</label>
+          <input
+            type="number"
+            name="fives"
+            id="fives"
+            value={fives}
+            onChange={(e) => setFives(e.target.value)}
+          />
+        </div>
 
-      <label>Tens:</label>
-      <input
-        type="number"
-        value={tens}
-        onChange={(e) => setTens(e.target.value)}
-      />
+        <div className="cashInputs">
+          <label htmlFor="tens">Tens:</label>
+          <input
+            type="number"
+            name="tens"
+            id="tens"
+            value={tens}
+            onChange={(e) => setTens(e.target.value)}
+          />
+        </div>
 
-      <label>Twenties:</label>
-      <input
-        type="number"
-        value={twenties}
-        onChange={(e) => setTwenties(e.target.value)}
-      />
+        <div className="cashInputs">
+          <label htmlFor="twenties">Twenties:</label>
+          <input
+            type="number"
+            name="twenties"
+            id="twenties"
+            value={twenties}
+            onChange={(e) => setTwenties(e.target.value)}
+          />
+        </div>
 
-      <label>Fifties:</label>
-      <input
-        type="number"
-        value={fifties}
-        onChange={(e) => setFifties(e.target.value)}
-      />
+        <div className="cashInputs">
+          <label htmlFor="fifties">Fifties: </label>
+          <input
+            type="number"
+            name="fifties"
+            id="fifties"
+            value={fifties}
+            onChange={(e) => setFifties(e.target.value)}
+          />
+        </div>
 
-      <label>Hundreds:</label>
-      <input
-        type="number"
-        value={hundreds}
-        onChange={(e) => setHundreds(e.target.value)}
-      />
+        <div className="cashInputs">
+          <label htmlFor="hundreds">Hundreds: </label>
+          <input
+            type="number"
+            name="hundreds"
+            id="hundreds"
+            value={hundreds}
+            onChange={(e) => setHundreds(e.target.value)}
+          />
+        </div>
 
-      {/* Current total */}
-      <label>Current Total:</label>
-      <input type="number" value={currentTotal} readOnly />
+        {/* Receipts */}
+        <div className="cashInputs">
+          <label htmlFor="receipts">Receipts: </label>
+          <input
+            type="number"
+            name="receipts"
+            id="receipts"
+            value={receipts}
+            onChange={(e) => setReceipts(e.target.value)}
+          />
+        </div>
 
-      {/* Receipts */}
-      <label>Receipts:</label>
-      <input
-        type="number"
-        value={receipts}
-        onChange={(e) => setReceipts(e.target.value)}
-      />
+        {/* Current total */}
+        <div className="cashInputs">
+          <label htmlFor="currentTotal">Current Total: </label>
+          <input
+            type="number"
+            name="currentTotal"
+            id="currentTotal"
+            value={currentTotal}
+          />
+        </div>
 
-      {/* Total Petty Cash */}
-      <label>Total Petty Cash:</label>
-      <input
-        type="number"
-        value={totalPettyCash}
-        onChange={(e) => setTotalPettyCash(e.target.value)}
-      />
+        {/* Total Petty Cash */}
+        <div className="cashInputs">
+          <label htmlFor="totalPettyCash">Total Petty Cash: </label>
+          <input
+            type="number"
+            name="totalPettyCash"
+            id="totalPettyCash"
+            value={totalPettyCash}
+            onChange={(e) => setTotalPettyCash(e.target.value)}
+          />
+        </div>
+      </div>
     </div>
   );
 };

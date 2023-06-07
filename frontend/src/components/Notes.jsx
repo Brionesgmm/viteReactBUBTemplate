@@ -22,60 +22,64 @@ const Notes = ({
 
   return (
     <div>
-      <div className="form-group">
-        <label>Overlocks:</label>
-        {overlocks.map((value, index) => (
-          <input
-            key={index}
-            name={`overlock${index}`}
-            value={value}
-            onChange={handleInputChange(index, setOverlocks)}
-          />
-        ))}
-      </div>
-      <div className="form-group">
-        <label>Reverse Overlocks:</label>
-        {reverseOverlocks.map((value, index) => (
-          <input
-            key={index}
-            name={`reverseOverlock${index}`}
-            value={value}
-            onChange={handleInputChange(index, setReverseOverlocks)}
-          />
-        ))}
-      </div>
-      <div className="form-group">
-        <label>Cleans:</label>
-        {cleans.map((value, index) => (
-          <input
-            key={index}
-            name={`clean${index}`}
-            value={value}
-            onChange={handleInputChange(index, setCleans)}
-          />
-        ))}
-      </div>
-      <div className="form-group">
-        <label>To Do List:</label>
-        {toDoList.map((value, index) => (
-          <input
-            key={index}
-            name={`toDoList${index}`}
-            value={value}
-            onChange={handleInputChange(index, setToDoList)}
-          />
-        ))}
-      </div>
-      <div className="form-group">
-        <label>Other Notes:</label>
-        {otherNotes.map((value, index) => (
-          <input
-            key={index}
-            name={`otherNotes${index}`}
-            value={value}
-            onChange={handleInputChange(index, setOtherNotes)}
-          />
-        ))}
+      <div className="notes">
+        <div className="storageUnits">
+          <div className="overlocks">
+            <label>Overlocks:</label>
+            {overlocks.map((value, index) => (
+              <input
+                key={index}
+                name={`overlock${index}`}
+                value={value}
+                onChange={handleInputChange(index, setOverlocks)}
+              />
+            ))}
+          </div>
+          <div className="reverseOverlocks">
+            <label>Reverse Overlocks:</label>
+            {reverseOverlocks.map((value, index) => (
+              <input
+                key={index}
+                name={`reverseOverlock${index}`}
+                value={value}
+                onChange={handleInputChange(index, setReverseOverlocks)}
+              />
+            ))}
+          </div>
+          <div className="cleaned">
+            <label>Cleaned:</label>
+            {cleans.map((value, index) => (
+              <input
+                key={index}
+                name={`clean${index}`}
+                value={value}
+                onChange={handleInputChange(index, setCleans)}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="todoList">
+          <label>Todo List:</label>
+          {toDoList.map((value, index) => (
+            <input
+              key={index}
+              name={`toDoList${index}`}
+              value={value}
+              onChange={handleInputChange(index, setToDoList)}
+            />
+          ))}
+        </div>
+        <div className="otherNotes">
+          <label>Other Notes:</label>
+          {otherNotes.map((value, index) => (
+            <input
+              key={index}
+              name={`otherNotes${index}`}
+              value={value}
+              onChange={handleInputChange(index, setOtherNotes)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

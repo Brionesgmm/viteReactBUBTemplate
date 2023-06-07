@@ -3,19 +3,21 @@ import React from "react";
 const DailyTasks = ({ tasks, handleCheck }) => {
   console.log(tasks);
   return (
-    <div className="form-group">
-      <label>Daily Tasks:</label>
+    <div className="tasksSection">
+      <label className="taskTitle">Daily Tasks:</label>
       {tasks.map((task, index) => (
-        <div key={index}>
-          <label>
+        <div key={index} className="task">
+          <label className="taskLabel" htmlFor={`dailyTask${index}`}>
             {task.label}
-            <input
-              type="checkbox"
-              checked={task.checked}
-              name={`dailyTask${index}`}
-              onChange={() => handleCheck(index)}
-            />
           </label>
+          <input
+            className="taskInput"
+            type="checkbox"
+            checked={task.checked}
+            name={`dailyTask${index}`}
+            id={`dailyTask${index}`}
+            onChange={() => handleCheck(index)}
+          />
         </div>
       ))}
     </div>
