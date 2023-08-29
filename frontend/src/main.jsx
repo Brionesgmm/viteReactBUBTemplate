@@ -12,8 +12,7 @@ import Profile from "./routes/Profile";
 import Logout from "./routes/Logout";
 import Feed from "./routes/Feed";
 import Post from "./routes/Post";
-import FormContainer from "./routes/FormContainer";
-import TasksList from "./routes/TasksList";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <TasksList />,
+        element: <Profile />,
       },
       {
         path: "/feed",
